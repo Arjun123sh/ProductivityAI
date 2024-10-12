@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Main.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
+import Markdown from "react-markdown";
 
 const Main = () => {
   const {
@@ -32,7 +33,7 @@ const Main = () => {
           <>
             <div className="greet">
               <p>
-                <span>Hello!.</span>
+                <span>Hello!</span>
               </p>
               <p>What would you like to accomplish today?</p>
             </div>
@@ -73,22 +74,31 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className="result">
-            <div className="result-title">
-              <img src={assets.user_icon} alt="result" />
-              <p>{recentPrompt}</p>
+          <div className="chat-container">
+            <div className="chat-message user-message">
+              <div className="chat-avatar">
+                <img src={assets.user_icon} alt="User" />
+              </div>
+              <div className="chat-bubble">
+                <p>{recentPrompt}</p>
+              </div>
             </div>
-            <div className="result-data">
-              <img src={assets.gemini_icon} alt="gemini" />
-              {loading ? (
-                <div className="loader">
-                  <hr />
-                  <hr />
-                  <hr />
-                </div>
-              ) : (
-                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
-              )}
+
+            <div className="chat-message ai-message">
+              <div className="chat-avatar">
+                <img src={assets.gemini_icon} alt="AI" />
+              </div>
+              <div className="chat-bubble">
+                {loading ? (
+                  <div className="loader">
+                    <hr />
+                    <hr />
+                    <hr />
+                  </div>
+                ) : (
+                  <Markdown>{resultData}</Markdown>
+                )}
+              </div>
             </div>
           </div>
         )}
