@@ -1,9 +1,3 @@
-// const apiKey = "AIzaSyBHPRnck0_q8JcYHHIPq89zVL-pLMd6FrQ";
-
-
-
-// node --version # Should be >= 18
-// npm install @google/generative-ai
 
 const {
     GoogleGenerativeAI,
@@ -12,7 +6,7 @@ const {
   } = require("@google/generative-ai");
   
   const MODEL_NAME = "gemini-1.0-pro";
-  const API_KEY = "AIzaSyBHPRnck0_q8JcYHHIPq89zVL-pLMd6FrQ";
+  const API_KEY = "AIzaSyBu4dzkCiZX6PfOvGOpy_9lSvRT9QaLbZU";
   
   async function runChat(prompt) {
     const genAI = new GoogleGenerativeAI(API_KEY);
@@ -50,11 +44,11 @@ const {
       history: [
         {
           role: "user",
-          parts: [{ text: "hi gemini"}],
+          parts: [{ text: "hi ProductivityAI"}],
         },
         {
           role: "model",
-          parts: [{ text: "Hello there! I am not Gemini, I am Gemini, a multimodal AI language model developed by Google. I can help you with a wide range of writing tasks, such as answering your questions, generating text, translating languages, and writing different kinds of creative content. How can I assist you today?"}],
+          parts: [{ text: "Hello there! I am not ProductivityAI, I am ProductivityAI, a multimodal AI language model developed by Google. I can help you with a wide range of writing tasks, such as answering your questions, generating text, translating languages, and writing different kinds of creative content. How can I assist you today?"}],
         },
       ],
     });

@@ -1,9 +1,10 @@
 .Sidebar{
     min-height: 100vh;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #b0d0f7;
+    width: 100px;
     padding: 25px 25px;
 }
 
